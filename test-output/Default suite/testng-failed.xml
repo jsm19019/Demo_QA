@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.Alerts">
+      <class name="TestCases.Frames">
         <methods>
-          <include name="checking_for_fourth_alert_cancel"/>
+          <include name="nesterframe_frame1"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- TestCases.Alerts -->
+      </class> <!-- TestCases.Frames -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -36,7 +36,22 @@ public class Alerts_Windows_Forms extends BasePage {
 
 	@FindBy(id = "promptResult")
 	WebElement confirmpromptresult;
+	
+	@FindBy(xpath="(//*[@class=\"accordion\"])/div[3]//li[3]")
+	WebElement btnFrames;
 
+	
+	
+	@FindBy(xpath = "//*[@class=\"text-center\"]")
+	WebElement txtFrames;
+	
+	@FindBy(id="sampleHeading")
+	WebElement frame1txt;
+	
+	@FindBy(xpath="//*[text()=\"Parent frame\"]")
+	WebElement parenttxt;
+	
+	
 	public void click_on_Alerts() {
 		textElement.click();
 	}
@@ -116,4 +131,43 @@ public class Alerts_Windows_Forms extends BasePage {
 			return e.getMessage();
 		}
 	}
+	
+	public void click_on_frames()
+	{
+		btnFrames.click();
+	}
+	
+	
+	public String frame_Validation() {
+		try {
+			String txtname = txtFrames.getText();
+			return txtname;
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+	}
+	
+	public String frame1_text_validation()
+	{
+		try {
+			String txt = frame1txt.getText();
+			return txt;
+		}
+		catch(Exception e)
+		{
+			return e.getMessage();
+		}
+		
+	}
+	
+	public String nested_parent_frame_validation()
+	{
+		String txt = parenttxt.getText();
+		return txt;
+		
+	}
+	
+	
+	
+	
 }

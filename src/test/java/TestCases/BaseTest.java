@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -29,8 +30,12 @@ public class BaseTest {
 		}
 
 		if (prop.getProperty("browser").equals("chrome")) {
+			
+			ChromeOptions co = new ChromeOptions();
+			co.addArguments("--headless=new");
+			
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(co);
 			driver.manage().window().maximize();
 			driver.get(prop.getProperty("url"));
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

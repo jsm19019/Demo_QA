@@ -69,7 +69,7 @@ public class Alerts extends BaseTest {
 		Assert.assertEquals(txt_Validate, "You selected Ok", "You did't selected OK");
 	}
 
-	@Test
+	@Test(priority = 6)
 	public void checking_for_third_alert_cancel() {
 		Alerts_Windows_Forms obj = new Alerts_Windows_Forms(driver);
 		obj.click_on_Alerts();
@@ -82,7 +82,7 @@ public class Alerts extends BaseTest {
 		Assert.assertEquals(txtValidate, "You selected Cancel", "You did't selected OK");
 	}
 
-	@Test
+	@Test(priority = 7)
 	public void checking_for_fourth_alert_cancel() throws InterruptedException {
 		Alerts_Windows_Forms obj = new Alerts_Windows_Forms(driver);
 		obj.click_on_Alerts();
